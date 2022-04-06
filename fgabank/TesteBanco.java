@@ -37,18 +37,28 @@ public class TesteBanco {
 //		System.out.println("CPF: " +pessoaComConstrutor1.getCpf());
 //		System.out.println("RG: "+ pessoaComConstrutor1.getRg());
 		
+		PessoaFisica pfPamela = new PessoaFisica(); //pfPamela => referencia
+		pfPamela.setNome("Pamela Guerra");
+		pfPamela.setEmail("pamelatguerra@gmail.com");
+		pfPamela.setTelefone("11-99999-7777");
+		pfPamela.setCpf("879.359.983-88");
+		pfPamela.setProfissao("Designer");
+		pfPamela.setRg("12238888-7");
+			
+		
 		Conta conta1 = new Conta();
 		conta1.setAgencia(1234);
 		conta1.setNumeroConta(7889);
+		conta1.setTitular(pfPamela);
+		
 		//conta1.setSaldo(1000000.50);=> não se deve alterar diretamente essa informação. Ela apenas pode ser exibida.
-		conta1.setTitular(" Pamela Guerra");
 		
 		conta1.depositar(100000.00);
 		
 		
 		System.out.println("Agência: " + conta1.getAgencia());
 		System.out.println("Número da Conta: " + conta1.getAgencia());
-		System.out.println("Titular: " + conta1.getTitular());
+		System.out.println("Titular: " + conta1.getTitular().getNome());
 		
 		System.out.printf("Saldo Atual: R$ %.2f \n",conta1.getSaldo());
 		
@@ -69,6 +79,16 @@ public class TesteBanco {
 		
 		System.out.printf("Saldo Atual Pamela: R$ %.2f \n",conta1.getSaldo());
 		System.out.printf("Saldo Atual Babakuxy: R$ %.2f \n",conta2.getSaldo());
+		
+		ContaCorrente cc1 = new ContaCorrente();
+		cc1.depositar (1000);
+		System.out.println("Saldo: " +cc1.getSaldo());
+		System.out.println("Limite: " + cc1.getLimite());
+		System.out.println("Saldo com Limite: " + cc1.getSaldoComLimite());
+		cc1.sacar (1500);
+		System.out.println("Saldo: " + cc1.getSaldo());
+		System.out.println("Saldo com limite: " + cc1.getSaldoComLimite());
+		
 		
 		
 		

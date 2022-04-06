@@ -6,14 +6,20 @@ public class PessoaFisica extends PessoaHeranca {
 	private String rg;
 	private String profissao;
 	
-	public PessoaFisica(String cpf, String rg, String profissao) {
+	
+	
+	public PessoaFisica() { //gcfs no atalho ctrl 3
+		super();
+	}
+
+	public PessoaFisica(String cpf, String rg, String profissao) { //gcuf no atalho ctrl 3
 		super();
 		this.cpf = cpf;
 		this.rg = rg;
 		this.profissao = profissao;
 	}
 
-	public String getCpf() {
+	public String getCpf() { //ggas no atalho ctrl 3
 		return cpf;
 	}
 

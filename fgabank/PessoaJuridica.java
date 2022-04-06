@@ -6,6 +6,12 @@ public class PessoaJuridica extends PessoaHeranca {
 	private String segmento;
 	private String responsavel;
 	
+	
+	
+	public PessoaJuridica() {
+		super();
+	}
+
 	public PessoaJuridica(String cnpj, String segmento, String responsavel) { //gcuf - Para achar no atalho ctrl 3
 		super();
 		this.cnpj = cnpj;

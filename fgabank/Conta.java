@@ -4,14 +4,14 @@ public class Conta {
 	
 	private int agencia;
 	private int numeroConta;
-	private double saldo;
-	private String titular;
+	protected double saldo;
+	private PessoaHeranca titular;// troquei o tipo de String para PessoaHerança para fazer referencia e puxar mais dados
 	
 	public Conta() { // padrao
 		
 	}
 
-	public Conta(int agencia, int numeroConta, String titular) { // sobrecarga
+	public Conta(int agencia, int numeroConta, PessoaHeranca titular) { // sobrecarga
 		super();
 		this.agencia = agencia;
 		this.numeroConta = numeroConta;
@@ -71,11 +71,11 @@ public class Conta {
 	}
 
 
-	public String getTitular() {
+	public PessoaHeranca getTitular() {
 		return titular;
 	}
 
-	public void setTitular(String titular) {
+	public void setTitular(PessoaHeranca titular) {
 		this.titular = titular;
 	}
 
